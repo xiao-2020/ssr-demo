@@ -7,6 +7,7 @@ export default context => {
     const { app, router, store } = createApp()
 
     // 导航到一个url地址
+    console.log(context.url)
     router.push(context.url) 
     // 此方法保证 所有的异步进入钩子和路由初始化相关联的异步组件已经 解析 好了  为了保证客户端和服务端数据一致
     router.onReady(() => {
@@ -17,7 +18,7 @@ export default context => {
         return reject({code: 404})
       }
       // 调用所有匹配到的路由组件调用 asyncData    asyncData 返回promise对象
-      Promise.all(matchedComponents.forEach(Component => {
+      Promise.all(matchedComponents.map(Component => {
         if(Component.asyncData) {
           return Component.asyncData({
             store, // vuex 对象

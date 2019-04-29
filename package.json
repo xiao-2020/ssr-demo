@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build:client": "vue-cli-service build --mode client --dest clientdist src/client.js",
-    "build:server": "vue-cli-service build --mode server --dest serverdist src/server.js"
+    "serve": "vue-cli-service serve --mode client",
+    "build:client": "vue-cli-service build --mode client --dest clientdist src/client.js --watch",
+    "build:server": "vue-cli-service build --mode server --dest serverdist src/server.js --watch"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

@@ -23,7 +23,11 @@ export default {
   computed: {},
   watch: {},
   methods: {},
-  mounted() {},
+  mounted() {
+    setTimeout(() => {
+      this.homepage = 'hahaha'
+    }, 2000);
+  },
   activated() {},
   deactivated() {},
 }

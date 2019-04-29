@@ -24,10 +24,6 @@ module.exports = {
       config.devtool = 'source-map'
       config.output.libraryTarget = 'commonjs2'
       config.plugins.push(new VueSSRServerPlugin())
-      config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-        name: "manifest",
-        minChunks: Infinity
-      }))
       // https://webpack.js.org/configuration/externals/#function
       // https://github.com/liady/webpack-node-externals
       // 外置化应用程序依赖模块。可以使服务器构建速度更快，
