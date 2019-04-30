@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode client",
-    "build:client": "vue-cli-service build --mode client --dest clientdist src/client.js --watch",
-    "build:server": "vue-cli-service build --mode server --dest serverdist src/server.js --watch"
+    "client": "vue-cli-service build --mode client --dest clientdist src/client.js",
+    "server": "vue-cli-service build --mode server --dest serverdist src/server.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

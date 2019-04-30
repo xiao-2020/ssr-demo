@@ -2,17 +2,24 @@
 export default {
   name: 'common',
   namespaced: true,
-  state: {},
+  state: {
+    homepage: ''
+  },
   getters: {},
   actions: {
     async fetchUserInfo({commit}, config) {
       try {
         console.log(1)
         // let data = await api.user.read()
+        commit('setHomepage')
       } catch (error) {
         console.log(error)
       }
     },
   },
-  mutations: {},
+  mutations: {
+    setHomepage(state) {
+      state.homepage = Math.random()
+    }
+  },
 }

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   // 用于查询当前页面的函数
   asyncData({ route, store }) {
@@ -17,15 +18,20 @@ export default {
   mixins: [],
   data() {
     return {
-      homepage: 'homepage'
     }
   },
-  computed: {},
+  computed: {
+    homepage() {
+      return this.$store.state.common.homepage || 'asdasdasdas'
+    }
+  },
   watch: {},
-  methods: {},
+  methods: {
+    ...mapMutations('common', ['setHomepage'])
+  },
   mounted() {
     setTimeout(() => {
-      this.homepage = 'hahaha'
+      this.setHomepage()
     }, 2000);
   },
   activated() {},
